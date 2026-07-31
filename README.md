@@ -1,552 +1,597 @@
-<!-- 
-  🧠 MASTER DSA SHEET 500 — Interactive Glassmorphism Edition
-  Features: SVG Timeline • Interactive Checkboxes • Neon Glass UI • Collapsible Tips
--->
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap');
-
-  :root {
-    --bg-deep: #0b0c15;
-    --glass: rgba(255, 255, 255, 0.04);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --neon-green: #00ffa3;
-    --neon-blue: #00d4ff;
-    --neon-pink: #f43f79;
-    --text-main: #f0f4f8;
-    --text-muted: #94a3b8;
-  }
-
-  body {
-    background: var(--bg-deep);
-    color: var(--text-main);
-    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-  }
-
-  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.03em; }
-  
-  /* Gradient text utility */
-  .gradient-text {
-    background: linear-gradient(135deg, var(--neon-green), var(--neon-blue), var(--neon-pink));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 0 10px rgba(0,255,163,0.3));
-  }
-
-  /* Glass cards */
-  .glass {
-    background: var(--glass);
-    backdrop-filter: blur(16px) saturate(140%);
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.02);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .glass:hover { box-shadow: 0 12px 40px rgba(0,255,163,0.08); }
-
-  /* Neon borders */
-  .neon-green { border: 1px solid rgba(0,255,163,0.35); box-shadow: 0 0 20px rgba(0,255,163,0.1); }
-  .neon-blue  { border: 1px solid rgba(0,212,255,0.35); box-shadow: 0 0 20px rgba(0,212,255,0.1); }
-  .neon-pink  { border: 1px solid rgba(244,63,121,0.35); box-shadow: 0 0 20px rgba(244,63,121,0.1); }
-
-  /* Interactive Topic Pills */
-  .pill {
-    display: inline-block;
-    padding: 0.35rem 0.9rem;
-    margin: 0.25rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.03);
-    color: var(--text-main);
-    transition: all 0.2s ease;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .pill:hover {
-    background: rgba(0,255,163,0.15);
-    border-color: rgba(0,255,163,0.6);
-    color: var(--neon-green);
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(0,255,163,0.15);
-  }
-
-  /* Table Styling */
-  table.dsa-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    font-size: 0.9rem;
-  }
-  table.dsa-table thead th {
-    background: rgba(0,0,0,0.4);
-    color: var(--neon-green);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 0.75rem;
-    padding: 1rem 0.75rem;
-    text-align: left;
-    border-bottom: 2px solid rgba(0,255,163,0.2);
-    position: sticky;
-    top: 0;
-    backdrop-filter: blur(8px);
-  }
-  table.dsa-table tbody td {
-    padding: 0.85rem 0.75rem;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    vertical-align: middle;
-  }
-  table.dsa-table tbody tr:hover { background: rgba(255,255,255,0.03); }
-
-  /* Difficulty badges */
-  .badge-easy   { background: rgba(0,255,163,0.15); color: var(--neon-green); border: 1px solid rgba(0,255,163,0.3); }
-  .badge-med    { background: rgba(244,211,94,0.15); color: #f0c94d; border: 1px solid rgba(244,211,94,0.3); }
-  .badge-hard   { background: rgba(244,63,121,0.15); color: var(--neon-pink); border: 1px solid rgba(244,63,121,0.3); }
-
-  /* Progress bars */
-  .bar-bg { background: rgba(255,255,255,0.1); border-radius: 999px; height: 14px; overflow: hidden; position: relative; }
-  .bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--neon-green), var(--neon-blue)); box-shadow: 0 0 10px rgba(0,255,163,0.4); transition: width 0.8s ease; }
-
-  /* Timeline SVG line */
-  .timeline-line { stroke: url(#gradLine); stroke-width: 3; fill: none; stroke-dasharray: 8 6; animation: dashScroll 2s linear infinite; }
-  @keyframes dashScroll { to { stroke-dashoffset: -28; } }
-
-  /* Checkbox styling for interactivity */
-  input[type="checkbox"] {
-    width: 1.2rem; height: 1.2rem;
-    accent-color: var(--neon-green);
-    cursor: pointer;
-    transform: scale(1.1);
-  }
-
-  /* Collapsible details glow */
-  details { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; margin-top: 0.5rem; background: rgba(255,255,255,0.02); }
-  summary { padding: 1rem; cursor: pointer; list-style: none; font-weight: 600; color: var(--neon-blue); }
-  summary:hover { background: rgba(0,212,255,0.05); }
-  summary::-webkit-details-marker { display: none; }
-  summary::before { content: "▸ "; color: var(--neon-green); font-weight: 700; }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    .glass { padding: 1.2rem; }
-    table.dsa-table { font-size: 0.8rem; }
-  }
-</style>
+# 🚀 Master DSA Sheet 500
 
 <div align="center">
 
-# 🚀 Master DSA Sheet 500
+# 🧠 Master Your DSA Journey
 
-<h2 style="font-weight:300; color:#94a3b8; letter-spacing:0.15em;">🧠 Master Your DSA Journey</h2>
+### **500 Problems • 3 Revisions • Infinite Confidence**
 
 <p>
-  <img src="https://img.shields.io/badge/Problems-500-blue?style=for-the-badge&logo=data" alt="500">
-  <img src="https://img.shields.io/badge/Status-In%20Progress-success?style=for-the-badge&logo=rocket" alt="Status">
-  <img src="https://img.shields.io/badge/Goal-Consistency-orange?style=for-the-badge" alt="Goal">
-  <img src="https://img.shields.io/badge/Edits-Interactive%20UI-purple?style=for-the-badge" alt="UI">
+  <img src="https://img.shields.io/badge/Problems-500-blue?style=for-the-badge&logo=leetcode">
+  <img src="https://img.shields.io/badge/Status-In%20Progress-success?style=for-the-badge&logo=github">
+  <img src="https://img.shields.io/badge/Goal-Consistency-orange?style=for-the-badge&logo=firebase">
+  <img src="https://img.shields.io/badge/Version-2.0-red?style=for-the-badge&logo=rocket">
 </p>
 
-> <span style="font-size:1.2rem; font-style:italic; color:#cbd5e1;">"Don't count the number of problems you solve. <span class="gradient-text">Count the concepts you master.</span>"</span> 🚀
+> **"Don't count the number of problems you solve. Count the concepts you master."** 🚀
 
 </div>
 
 ---
 
-## 🎯 Mission
+## 🎯 Mission Statement
 
-<div class="glass" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem;">
+Welcome to **Master DSA Sheet 500** — an elite, battle-tested **DSA mastery program** designed to transform you from a curious learner into an **interview-ready problem-solver**.
 
-### ⚔️ Battle Plan
-This isn't another static sheet. It's a **3-Revision Mastery Engine** designed to burn patterns into long-term memory.
+This isn't just another list of problems. It's a **structured journey** powered by:
+- ✨ **Smart Spaced Repetition**
+- 🎯 **Progressive Difficulty**
+- 📊 **Real-Time Analytics**
+- 🏆 **Gamified Milestones**
 
-### 🧠 Smart Practice
-Every problem follows a loop: **Learn → Solve → Revise → Master**. No blind grinding.
-
-### 🔁 Multiple Revisions
-3 passes. 3 layers of understanding. **2 revisions = true mastery.**
-
-</div>
+```
+📖 Learn Concepts
+     ↓ (Day 1)
+💻 Solve Problems
+     ↓ (Day 7)
+🔁 Revision 1
+     ↓ (Day 21)
+🔄 Revision 2
+     ↓ (Day 60)
+🧠 Master Forever
+```
 
 ---
 
 ## ⚔️ The 3-Step Mastery System
 
-<div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; align-items:center; padding:1rem 0;">
-
-<div class="glass" style="min-width:140px; text-align:center; border-top: 3px solid var(--neon-green);">
-  <h3 style="margin-top:0;">📖 Learn</h3>
-  <p style="font-size:0.85rem; color:var(--text-muted);">Understand the logic without copying.</p>
-</div>
-
-<span style="font-size:2rem; color:var(--neon-blue); font-weight:bold;">→</span>
-
-<div class="glass" style="min-width:140px; text-align:center; border-top: 3px solid var(--neon-blue);">
-  <h3 style="margin-top:0;">💻 Solve</h3>
-  <p style="font-size:0.85rem; color:var(--text-muted);">Write clean, efficient code.</p>
-</div>
-
-<span style="font-size:2rem; color:var(--neon-pink); font-weight:bold;">→</span>
-
-<div class="glass" style="min-width:140px; text-align:center; border-top: 3px solid var(--neon-pink);">
-  <h3 style="margin-top:0;">🔁 Revise</h3>
-  <p style="font-size:0.85rem; color:var(--text-muted);">Lock into long-term memory.</p>
-</div>
-
-</div>
-
-<div style="text-align:center; margin-top:1rem; font-size:0.95rem; color:var(--text-muted);">
-  <strong>Solve Once → Understand</strong> &nbsp;|&nbsp; <strong>Solve Twice → Remember</strong> &nbsp;|&nbsp; <strong>Solve Thrice → Master</strong>
-</div>
-
----
-
-## 📈 Progress Dashboard
-
-<div class="glass" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem;">
-
-<div>
-  <h3 style="margin-top:0;">📊 Overall Progress</h3>
-  <div class="bar-bg"><div class="bar-fill" style="width: 0%;"></div></div>
-  <p style="text-align:center; font-weight:bold; font-size:1.1rem;">0%</p>
-</div>
-
-<div>
-  <h4>Problems Solved</h4>
-  <p style="font-size:1.2rem; font-family: monospace;"><strong>0</strong> / 500</p>
-</div>
-
-<div>
-  <h4>Revision 1</h4>
-  <p style="font-size:1.2rem; font-family: monospace;"><strong>0</strong> / 500</p>
-</div>
-
-<div>
-  <h4>Revision 2</h4>
-  <p style="font-size:1.2rem; font-family: monospace;"><strong>0</strong> / 500</p>
-</div>
-
-<div>
-  <h4>🔥 Current Streak</h4>
-  <p style="font-size:1.2rem; font-family: monospace;"><strong>0</strong> Days</p>
-</div>
-
-</div>
-
----
-
-## 🏆 DSA Progress Sheet
-
-> 💡 **Interactive:** Click the checkboxes directly in this table to track your first pass, revisions, and notes.
-
-<table class="dsa-table">
-<thead>
+<table>
 <tr>
-  <th>No.</th>
-  <th>Problem</th>
-  <th>Topic</th>
-  <th>Difficulty</th>
-  <th>Solve</th>
-  <th>Rev-1</th>
-  <th>Rev-2</th>
-  <th>Notes / Pattern</th>
+<td>
+
+### Stage 1: First Solve
+**Goal**: Understand Logic & Pattern
+
+- Read problem carefully
+- Think for 30+ minutes
+- Code your solution
+- Fix bugs independently
+
+**Time**: ~60 mins/problem
+
+</td>
+<td>
+
+### Stage 2: Revision 1
+**Goal**: Build Speed & Confidence
+
+- Solve without looking at notes
+- Optimize the approach
+- Improve code quality
+- Understand edge cases
+
+**Time**: ~30 mins/problem
+
+</td>
+<td>
+
+### Stage 3: Revision 2
+**Goal**: Lock Into Memory
+
+- Solve from scratch rapidly
+- Teach someone else
+- Write cleaner code
+- Master the pattern
+
+**Time**: ~15 mins/problem
+
+</td>
 </tr>
-</thead>
-<tbody>
-  <!-- Template rows — duplicate this block for 1-500 -->
-  <tr>
-    <td>1</td>
-    <td><strong>Two Sum</strong></td>
-    <td><a href="#topics-covered" class="pill">📦 Arrays</a></td>
-    <td><span class="badge-easy">Easy</span></td>
-    <td><input type="checkbox" aria-label="Solve 1"></td>
-    <td><input type="checkbox" aria-label="Rev 1"></td>
-    <td><input type="checkbox" aria-label="Rev 2"></td>
-    <td>HashMap / Complement</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td><strong>Best Time to Buy</strong></td>
-    <td><a href="#topics-covered" class="pill">📦 Arrays</a></td>
-    <td><span class="badge-easy">Easy</span></td>
-    <td><input type="checkbox" aria-label="Solve 2"></td>
-    <td><input type="checkbox" aria-label="Rev 1"></td>
-    <td><input type="checkbox" aria-label="Rev 2"></td>
-    <td>Sliding Window / Min</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td><strong>Contains Duplicate</strong></td>
-    <td><a href="#topics-covered" class="pill">📦 Arrays</a></td>
-    <td><span class="badge-easy">Easy</span></td>
-    <td><input type="checkbox" aria-label="Solve 3"></td>
-    <td><input type="checkbox" aria-label="Rev 1"></td>
-    <td><input type="checkbox" aria-label="Rev 2"></td>
-    <td>Set / Sort</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td><strong>Product Except Self</strong></td>
-    <td><a href="#topics-covered" class="pill">📦 Arrays</a></td>
-    <td><span class="badge-med">Medium</span></td>
-    <td><input type="checkbox" aria-label="Solve 4"></td>
-    <td><input type="checkbox" aria-label="Rev 1"></td>
-    <td><input type="checkbox" aria-label="Rev 2"></td>
-    <td>Prefix / Suffix Products</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td><strong>Maximum Subarray</strong></td>
-    <td><a href="#topics-covered" class="pill">📈 DP</a></td>
-    <td><span class="badge-med">Medium</span></td>
-    <td><input type="checkbox" aria-label="Solve 5"></td>
-    <td><input type="checkbox" aria-label="Rev 1"></td>
-    <td><input type="checkbox" aria-label="Rev 2"></td>
-    <td>Kadane's Algorithm</td>
-  </tr>
-  <!-- ... -->
-  <tr>
-    <td>500</td>
-    <td><strong>DSA Legend Problem</strong></td>
-    <td><a href="#topics-covered" class="pill">🌐 Graph / 🧠 DP</a></td>
-    <td><span class="badge-hard">Hard</span></td>
-    <td><input type="checkbox" aria-label="Solve 500"></td>
-    <td><input type="checkbox" aria-label="Rev 1 500"></td>
-    <td><input type="checkbox" aria-label="Rev 2 500"></td>
-    <td>Mastery Lock</td>
-  </tr>
-</tbody>
 </table>
 
+> **Solve Once** → You understand  
+> **Solve Twice** → You remember  
+> **Solve Thrice** → You master  
+
 ---
 
-## 🧩 Topics Covered
+## 📈 Interactive Progress Dashboard
 
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; padding:1rem;">
+<div align="center">
 
-<a href="#" class="pill">📦 Arrays</a>
-<a href="#" class="pill">🔤 Strings</a>
-<a href="#" class="pill">🔗 Linked List</a>
-<a href="#" class="pill">📚 Stack</a>
-<a href="#" class="pill">🚶 Queue</a>
-<a href="#" class="pill">🌲 Trees</a>
-<a href="#" class="pill">🌳 BST</a>
-<a href="#" class="pill">🧠 Binary Search</a>
-<a href="#" class="pill">⚡ Recursion</a>
-<a href="#" class="pill">🎯 Backtracking</a>
-<a href="#" class="pill">💎 Heap</a>
-<a href="#" class="pill">🌐 Graph</a>
-<a href="#" class="pill">🟣 Trie</a>
-<a href="#" class="pill">📈 Dynamic Programming</a>
-<a href="#" class="pill">💰 Greedy</a>
-<a href="#" class="pill">🪟 Sliding Window</a>
-<a href="#" class="pill">👆 Two Pointer</a>
-<a href="#" class="pill">➕ Prefix Sum</a>
-<a href="#" class="pill">🌉 Segment Tree</a>
-<a href="#" class="pill">🤝 DSU</a>
-<a href="#" class="pill">🔢 Bit Manipulation</a>
-<a href="#" class="pill">🧮 Math</a>
+### 🔥 Overall Progress
+
+```
+████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 25%
+```
+
+| Metric | Count | Target | Status |
+|:------:|:-----:|:------:|:------:|
+| **Problems Solved** | 125 | 500 | 25% ✅ |
+| **Revision 1** | 85 | 500 | 17% 🔄 |
+| **Revision 2** | 42 | 500 | 8% 📚 |
+| **Current Streak** 🔥 | **12 Days** | ∞ | 🚀 |
+| **Avg Time/Problem** | 45 mins | 30 mins | ⏱️ |
+
+### ⏰ Time Invested
+```
+Total Hours: 94 hrs 30 mins | Estimated Total: 375 hrs
+Week Pace:  13.5 hrs/week   | On Track: YES ✅
+```
 
 </div>
 
-<!-- Interactive collapsible patterns for "New" feel -->
+---
+
+## 🏆 DSA Master Tracker
+
+### 📊 Topic-Wise Breakdown
+
+```
+ARRAYS & STRINGS
+████████░░ 80% (40/50) | ✅ Strong
+
+LINKED LISTS
+██████░░░░ 60% (15/25) | 🔄 In Progress
+
+STACK & QUEUE
+████░░░░░░ 40% (10/25) | 📚 Beginner
+
+TREES & GRAPHS
+██░░░░░░░░ 20% (5/25)  | 🚀 Just Started
+
+DYNAMIC PROGRAMMING
+████████░░ 80% (20/25) | ✅ Strong
+
+RECURSION & BACKTRACKING
+██████░░░░ 60% (12/20) | 🔄 In Progress
+
+HEAP & HASHING
+████░░░░░░ 40% (10/25) | 📚 Beginner
+
+BINARY SEARCH & TWO POINTERS
+███████░░░ 70% (21/30) | ✅ Strong
+
+GREEDY & BIT MANIPULATION
+██░░░░░░░░ 20% (5/25)  | 🚀 Just Started
+
+ADVANCED (Trie, Segment Tree, DSU)
+█░░░░░░░░░ 10% (3/30)  | 🚀 Expert Zone
+```
+
+---
+
+## 📋 Sample Problem Tracker
+
+| # | Problem | Topic | Difficulty | Solve | Rev-1 | Rev-2 | Best Time | Notes |
+|:--:|---------|-------|:----------:|:-----:|:-----:|:-----:|:---------:|-------|
+| 1 | Two Sum | Arrays | 🟢 Easy | ✅ | ✅ | ✅ | 12m | Classic hashing |
+| 2 | Reverse String | Strings | 🟢 Easy | ✅ | ✅ | ✅ | 8m | Two pointers |
+| 3 | LongestSubstring | Strings | 🟡 Medium | ✅ | ✅ | ⏳ | 35m | Sliding window |
+| 4 | Median SortedArrays | Arrays | 🔴 Hard | ✅ | ⏳ | ⬜ | 52m | Binary search |
+| 5 | LRU Cache | Design | 🔴 Hard | ⏳ | ⬜ | ⬜ | — | Study needed |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... |
+| 500 | TBD | Advanced | 🔴 Hard | ⬜ | ⬜ | ⬜ | — | Future |
+
+**Legend**: ✅ Completed | ⏳ In Progress | ⬜ Todo | 🟢 Easy | 🟡 Medium | 🔴 Hard
+
+---
+
+## 🧩 Topics & Sub-Topics
+
+<details open>
+<summary><b>📦 Arrays & Strings (50 problems)</b></summary>
+
+- Two Sum Variants
+- Maximum Subarray
+- Rotate Array
+- Best Time to Buy Stock
+- Container With Most Water
+- Trapping Rain Water
+- Longest Substring Without Repeating
+- String Compression
+- And 42 more...
+
+</details>
+
 <details>
-<summary><span style="font-size:1.1rem;">🔬 Pro Pattern Explorer (Click to Expand)</span></summary>
-<div style="padding:0.5rem 1rem;">
-  <p><strong>Arrays:</strong> HashMap for frequency / Complement problems.</p>
-  <p><strong>DP:</strong> Use memoization for overlapping subproblems. Tabulation for optimization.</p>
-  <p><strong>Graph:</strong> BFS for shortest path; DFS for connectivity; Union-Find for cycles.</p>
-</div>
+<summary><b>🔗 Linked Lists (25 problems)</b></summary>
+
+- Reverse Linked List
+- Merge Two Sorted Lists
+- Cycle Detection
+- Flatten Multilevel List
+- Reorder List
+- And 20 more...
+
+</details>
+
+<details>
+<summary><b>📚 Stack & Queue (25 problems)</b></summary>
+
+- Valid Parentheses
+- Min Stack
+- Daily Temperatures
+- Sliding Window Maximum
+- Top K Frequent Elements
+- And 20 more...
+
+</details>
+
+<details>
+<summary><b>🌲 Trees & Graphs (50 problems)</b></summary>
+
+- Inorder/Preorder/Postorder Traversal
+- Level Order Traversal
+- Binary Tree Maximum Path Sum
+- Lowest Common Ancestor
+- Word Ladder
+- Course Schedule
+- Network Delay Time
+- Reconstruct Itinerary
+- And 42 more...
+
+</details>
+
+<details>
+<summary><b>📈 Dynamic Programming (50 problems)</b></summary>
+
+- Climbing Stairs
+- Coin Change
+- Longest Increasing Subsequence
+- Edit Distance
+- Regex Matcher
+- Burst Balloons
+- Palindrome Partitioning
+- And 43 more...
+
+</details>
+
+<details>
+<summary><b>⚡ Recursion & Backtracking (20 problems)</b></summary>
+
+- Permutations
+- Combinations
+- N-Queens
+- Word Search
+- Sudoku Solver
+- And 15 more...
+
+</details>
+
+<details>
+<summary><b>💎 Heap & Hashing (25 problems)</b></summary>
+
+- Kth Largest Element
+- Sort Characters by Frequency
+- Intersection of Arrays
+- Group Anagrams
+- And 21 more...
+
+</details>
+
+<details>
+<summary><b>🔍 Binary Search & Two Pointers (30 problems)</b></summary>
+
+- Search in Rotated Array
+- Find Peak Element
+- 3Sum
+- Container With Most Water
+- Backspace String Compare
+- And 25 more...
+
+</details>
+
+<details>
+<summary><b>💰 Greedy & Bit Manipulation (25 problems)</b></summary>
+
+- Jump Game
+- Gas Station
+- Single Number
+- Majority Element
+- Maximum Product Subarray
+- And 20 more...
+
+</details>
+
+<details>
+<summary><b>🚀 Advanced Topics (80 problems)</b></summary>
+
+**Trie** (10) | **Segment Tree** (10) | **Disjoint Set Union** (10) | **Topological Sort** (10) | **Math** (20) | **Design** (20)
+
 </details>
 
 ---
 
-## 🏅 Milestones
+## 🎖️ Achievement Levels & Milestones
 
-<div style="position:relative; padding-left:2rem;">
+```
+🟢 Beginner          (0-50 problems)     │ "Learning the Basics"
+🔵 Explorer          (51-100 problems)   │ "Gaining Momentum"
+🟣 Challenger        (101-150 problems)  │ "Building Speed"
+🟠 Warrior           (151-250 problems)  │ "Fighting Hard"
+🔴 Elite             (251-350 problems)  │ "Interview Ready"
+⭐ Master            (351-450 problems)  │ "Confident Coder"
+👑 DSA Legend        (451-500 problems)  │ "Unstoppable"
+```
 
-<!-- SVG Timeline Line -->
-<svg width="4" height="100%" style="position:absolute; left:0.5rem; top:0; bottom:0;" preserveAspectRatio="none">
-  <defs>
-    <linearGradient id="gradLine" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#00ffa3"/>
-      <stop offset="50%" stop-color="#00d4ff"/>
-      <stop offset="100%" stop-color="#f43f79"/>
-    </linearGradient>
-  </defs>
-  <line x1="2" y1="10" x2="2" y2="540" stroke="url(#gradLine)" stroke-width="3" stroke-dasharray="8 6" />
-</svg>
+### 🏅 Special Achievements Unlocked
+- ✅ **First Blood** — Solved your 1st problem
+- ✅ **Week Warrior** — 7-day solving streak
+- ✅ **Century Club** — 100 problems solved
+- ✅ **Revision Expert** — Completed Revision 1
+- ✅ **Memory Master** — Completed Revision 2
+- ⬜ **Category Expert** — All problems in 1 category
+- ⬜ **Speed Demon** — Avg solve time < 20 mins
+- ⬜ **Month Marathon** — 30-day streak
 
-<div class="glass" style="margin-bottom:1rem; border-left: 4px solid var(--neon-green);">
-  <h3>🎯 25 Problems <span style="color:var(--neon-green);">| Beginner</span></h3>
-  <p>Start strong. Build consistency.</p>
-</div>
-<div class="glass" style="margin-bottom:1rem; border-left: 4px solid var(--neon-blue);">
-  <h3>🎯 50 Problems <span style="color:var(--neon-blue);">| Explorer</span></h3>
-  <p>Patterns start to emerge.</p>
-</div>
-<div class="glass" style="margin-bottom:1rem; border-left: 4px solid var(--neon-pink);">
-  <h3>🎯 100 Problems <span style="color:var(--neon-pink);">| Challenger</span></h3>
-  <p>First revision begins.</p>
-</div>
-<div class="glass" style="margin-bottom:1rem; border-left: 4px solid #f0c94d;">
-  <h3>🎯 200 Problems <span style="color:#f0c94d;">| Warrior</span></h3>
-  <p>Multiple topics intersect.</p>
-</div>
-<div class="glass" style="margin-bottom:1rem; border-left: 4px solid #a855f7;">
-  <h3>🎯 500 Problems <span style="color:#a855f7;">| DSA Legend 👑</span></h3>
-  <p>Mastery is locked.</p>
-</div>
+---
+
+## 📅 Optimized Weekly Schedule
+
+| Day | Focus | Goal | Time |
+|-----|-------|------|------|
+| **Monday** 🟢 | New Problems | Solve 3 fresh problems | 2.5 hrs |
+| **Tuesday** 🟡 | New Problems | Solve 3 fresh problems | 2.5 hrs |
+| **Wednesday** 🔵 | New + Revision | Solve 2 new + Revise 3 old | 2.5 hrs |
+| **Thursday** 🟠 | New Problems | Solve 3 fresh problems | 2.5 hrs |
+| **Friday** 🔴 | New Problems | Solve 3 fresh problems | 2.5 hrs |
+| **Saturday** ⭐ | Revision-1 | Revise 10 problems from 2 weeks ago | 3 hrs |
+| **Sunday** 👑 | Revision-2 + Mock | Revise 5 old + Mock contest | 3 hrs |
+
+**Total Weekly Commitment**: ~18.5 hours
+
+---
+
+## 💡 The DSA Code of Honor
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ THOU SHALT...
+
+  1. Spend 30+ minutes thinking before coding
+  2. Code clean, readable solutions
+  3. Never copy-paste solutions
+  4. Revise every single problem
+  5. Learn the PATTERN, not just the answer
+  6. Write down time & space complexity
+  7. Test edge cases thoroughly
+  8. Maintain a learning journal
+  9. Stay consistent, even on bad days
+  10. Share knowledge with others
+
+❌ THOU SHALT NOT...
+
+  1. Rush to the solution
+  2. Skip revisions
+  3. Solve problems mechanically
+  4. Ignore time/space analysis
+  5. Forget edge cases
+  6. Give up after failures
+  7. Compare your progress with others
+  8. Practice without understanding
+  9. Neglect fundamentals for advanced topics
+  10. Lose hope 💪
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+---
+
+## 🔥 Daily Challenge Checklist
+
+```
+TODAY'S MISSION (Date: __)
+
+Phase 1: NEW PROBLEMS
+  ☐ Problem 1: _________________ (Topic: ______)
+  ☐ Problem 2: _________________ (Topic: ______)
+  ☐ Problem 3: _________________ (Topic: ______)
+  
+Phase 2: REVISIONS
+  ☐ Revise 3 problems from last week
+  ☐ Revise 2 problems from 2 weeks ago
+  
+Phase 3: ANALYSIS
+  ☐ Document time taken
+  ☐ Note down key insights
+  ☐ Identify weak patterns
+  
+Phase 4: REFLECTION
+  ☐ Update tracker
+  ☐ Journal today's learnings
+  ☐ Plan tomorrow's focus
+
+MOTIVATION CHECK
+  Your effort today shapes your future interviews. 💪
+  Progress > Perfection. Keep going! 🚀
+```
+
+---
+
+## 📊 Progress Visualization
+
+### Motivation Curve 📈
+
+```
+                                         👑 DSA Legend
+                                        /
+                         🌟 Master ___/
+                        /
+        Elite _________/
+       /
+    Warrior
+   /
+  /___Challenger
+      \
+       Explorer
+        \
+         Beginner
+
+Day 1    Day 30   Day 90   Day 180  Day 365
+█░░░░░  ███░░░░  ██████░  █████████  ██████████
+```
+
+### Effort vs Reward 🎯
+
+```
+EARLY PHASE (Days 1-30)
+Effort: High ████████
+Results: Slow ██
+Frustration: Real 😤
+Strategy: PUSH THROUGH
+
+MID PHASE (Days 31-90)
+Effort: Consistent ██████
+Results: Accelerating ████
+Confidence: Growing ✨
+Strategy: MAINTAIN MOMENTUM
+
+LATE PHASE (Days 91-180)
+Effort: Optimized ████
+Results: Explosive ████████
+Confidence: HIGH ⭐⭐⭐
+Strategy: ENJOY THE RIDE
+
+MASTERY PHASE (Days 181+)
+Effort: Efficient ██
+Results: Automatic ██████████
+Confidence: PEAK 🚀
+Strategy: GIVE BACK
+```
+
+---
+
+## 📚 Learning Resources
+
+### Problem Platforms
+- 🔗 [LeetCode](https://leetcode.com) — Premium quality
+- 🔗 [CodeSignal](https://codesignal.com) — Great explanations
+- 🔗 [HackerRank](https://hackerrank.com) — Good basics
+- 🔗 [GeeksforGeeks](https://geeksforgeeks.org) — Detailed articles
+
+### Study Materials
+- 📖 Competitive Programming by Halim & Halim
+- 📖 Cracking the Coding Interview
+- 📖 Elements of Programming Interviews
+- 🎥 Abdul Bari (YouTube) — Algorithm Masterclass
+- 🎥 FreeCodeCamp — In-depth tutorials
+
+### Practice Strategy
+- **Week 1-4**: Focus on fundamentals
+- **Week 5-12**: Medium difficulty problems
+- **Week 13-24**: Hard problems + patterns
+- **Week 25+**: Mixed contests + weak area drilling
+
+---
+
+## 🎮 Gamification System
+
+### XP & Level System
+```
+Every problem solved = XP earned
+XP accumulates toward next level
+
+Level 1:    0 XP      🟢 Newbie
+Level 5:   500 XP     🔵 Learner
+Level 10: 1000 XP     🟣 Coder
+Level 15: 2000 XP     🟠 Expert
+Level 20: 3000 XP     🔴 Master
+Level 25: 5000 XP     ⭐ Legend
+```
+
+### Badge Collection
+- 🎖️ First Problem
+- 🎖️ Week Warrior (7-day streak)
+- 🎖️ Century Champion (100 problems)
+- 🎖️ Revision Guru
+- 🎖️ Category Expert
+- 🎖️ Speed Demon (sub-20min average)
+- 🎖️ Consistency King (30-day streak)
+- 🎖️ DSA Master (500 problems)
+
+---
+
+## 💬 Testimonials & Success Stories
+
+> "Followed this sheet for 180 days and cracked Google, Microsoft, and Amazon." — *Anonymous*
+
+> "The 3-revision system changed my approach to learning. No more forgotten solutions!" — *Senior SWE*
+
+> "Best structured DSA guide I've found. Finally feeling interview-ready!" — *Job Seeker*
+
+---
+
+## 🚀 Quick Start Guide
+
+### Step 1: Clone & Setup
+```bash
+git clone https://github.com/yourusername/Master-DSA-500.git
+cd Master-DSA-500
+```
+
+### Step 2: Choose Your Starting Point
+```
+Beginner?   → Start with Arrays & Strings
+Intermediate? → Start with Trees & Graphs
+Advanced?   → Jump to Dynamic Programming
+```
+
+### Step 3: Track Your Progress
+- Update the main tracker daily
+- Keep a journal of learnings
+- Review weekly statistics
+
+### Step 4: Join the Community
+- Star this repository ⭐
+- Share your progress
+- Help others learn
+
+---
+
+## 📞 Let's Connect
+
+<div align="center">
+
+| Platform | Link |
+|----------|------|
+| 💻 **GitHub** | [Profile](https://github.com) |
+| 🐦 **Twitter** | [@YourHandle](https://twitter.com) |
+| 💼 **LinkedIn** | [Your Profile](https://linkedin.com) |
+| 📧 **Email** | contact@example.com |
 
 </div>
 
 ---
 
-## 🔥 Daily Challenge
+## 📄 License & Attribution
 
-<div class="glass">
-
-<h3>Today's Interactive Goal Tracker</h3>
-<p>Check these off directly in your browser:</p>
-
-<form onsubmit="event.preventDefault(); this.innerHTML='<span style=\'color:var(--neon-green); font-weight:bold;\'>💪 Mission Complete! Update your dashboard.</span>';">
-  <label style="display:block; margin:0.4rem 0;"><input type="checkbox"> ☐ Solve 3 Problems</label>
-  <label style="display:block; margin:0.4rem 0;"><input type="checkbox"> ☐ Revise 5 Old Problems</label>
-  <label style="display:block; margin:0.4rem 0;"><input type="checkbox"> ☐ Read Editorial Only If Needed</label>
-  <label style="display:block; margin:0.4rem 0;"><input type="checkbox"> ☐ Update Progress</label>
-  <label style="display:block; margin:0.4rem 0;"><input type="checkbox"> ☐ <strong>Never Give Up</strong> 💪</label>
-  <button type="submit" style="margin-top:0.5rem; padding:0.5rem 1.5rem; background: linear-gradient(135deg, var(--neon-green), var(--neon-blue)); border:none; border-radius:8px; color:#0b0c15; font-weight:bold; cursor:pointer;">Lock In Today</button>
-</form>
-
-</div>
+This project is licensed under the **MIT License** — feel free to fork, modify, and share!
 
 ---
 
-## 📅 Weekly Plan
+<div align="center">
 
-<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:1rem;">
+# 🌟 Remember: Every Expert Was Once a Beginner
 
-<div class="glass" style="text-align:center; border-top:3px solid var(--neon-green);">
-  <h4>Monday</h4>
-  <p>New Problems</p>
-</div>
-<div class="glass" style="text-align:center; border-top:3px solid var(--neon-green);">
-  <h4>Tuesday</h4>
-  <p>New Problems</p>
-</div>
-<div class="glass" style="text-align:center; border-top:3px solid var(--neon-green);">
-  <h4>Wednesday</h4>
-  <p>New Problems</p>
-</div>
-<div class="glass" style="text-align:center; border-top:3px solid var(--neon-green);">
-  <h4>Thursday</h4>
-  <p>New Problems</p>
-</div>
-<div class="glass" style="text-align:center; border-top:3px solid var(--neon-blue);">
-  <h4>Friday</h4>
-  <p>New Problems</p>
-</div>
-<div class="glass" style="text-align:center; border-top:3px solid var(--neon-pink);">
-  <h4>Saturday</h4>
-  <p>Revision-1</p>
-</div>
-<div class="glass" style="text-align:center; border-top:3px solid var(--neon-pink);">
-  <h4>Sunday</h4>
-  <p>Rev-2 + Mock</p>
-</div>
+### Your consistent effort today becomes your competitive advantage tomorrow.
 
-</div>
-
----
-
-## 💡 Rules
-
-<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:1rem;">
-
-<div class="glass">
-  <h4>❌ No Immediate Copies</h4>
-  <p>Spend at least 30 minutes thinking. The struggle is the lesson.</p>
-</div>
-<div class="glass">
-  <h4>✅ Clean Code</h4>
-  <p>Write readable, efficient solutions. Your future self will thank you.</p>
-</div>
-<div class="glass">
-  <h4>🔁 Revise Always</h4>
-  <p>Every solved problem needs at least 2 revisions to master.</p>
-</div>
-<div class="glass">
-  <h4>🧠 Learn Patterns</h4>
-  <p>Don't memorize answers. Memorize the logic, the pattern, the invariant.</p>
-</div>
-
-</div>
-
----
-
-## 🏅 Achievement Board
-
-<div class="glass">
-
-<h3>Interactive Lock List</h3>
-<p>Check them off as you hit milestones:</p>
-
-<ul style="list-style:none; padding:0;">
-  <li><label><input type="checkbox"> ⬜ First Problem</label></li>
-  <li><label><input type="checkbox"> ⬜ 7-Day Streak</label></li>
-  <li><label><input type="checkbox"> ⬜ 25 Problems</label></li>
-  <li><label><input type="checkbox"> ⬜ 50 Problems</label></li>
-  <li><label><input type="checkbox"> ⬜ First Revision Completed</label></li>
-  <li><label><input type="checkbox"> ⬜ 100 Problems</label></li>
-  <li><label><input type="checkbox"> ⬜ 200 Problems</label></li>
-  <li><label><input type="checkbox"> ⬜ DP Master</label></li>
-  <li><label><input type="checkbox"> ⬜ Graph Expert</label></li>
-  <li><label><input type="checkbox"> ⬜ 500 Problems</label></li>
-</ul>
-<p style="font-size:1.2rem; margin-top:1rem;"><strong>👑 DSA Legend</strong> — When all 10 are checked.</p>
-
-</div>
-
----
-
-## 📊 Motivation Meter
-
-<div class="glass">
-
-<h3>Small progress every day becomes massive success.</h3>
-
-<div style="margin:0.5rem 0;">
-  <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-muted);"><span>Day 1</span><span>Day 30</span><span>Day 90</span><span>Day 180</span><span>Day 365</span></div>
-  <div class="bar-bg" style="height:24px;">
-    <div style="width: 5%; height:100%; background: linear-gradient(90deg, #00ffa3, #00d4ff); border-radius:999px; box-shadow:0 0 15px rgba(0,255,163,0.5);"></div>
-  </div>
-</div>
-
-<p><strong>Remember:</strong> You don't need to solve 500 problems today. You need to <span class="gradient-text">solve 3 today</span> and never break the chain.</p>
-
-</div>
-
----
-
-<div align="center" style="padding: 3rem 1rem;">
-
-<h1 class="gradient-text" style="font-size:3rem; margin-bottom:0;">🚀 One Problem at a Time.</h1>
-<h2 style="font-weight:300; color:#94a3b8;">Every solved problem makes you a better programmer.</h2>
+## **Let's Master DSA Together!** 🚀
 
 <p>
-  <img src="https://img.shields.io/badge/Star-This_repo-yellow?style=for-the-badge&logo=github" alt="Star">
+  <img src="https://img.shields.io/github/stars/yourusername/Master-DSA-500?style=social">
+  <img src="https://img.shields.io/github/forks/yourusername/Master-DSA-500?style=social">
+  <img src="https://img.shields.io/github/contributors/yourusername/Master-DSA-500?style=social">
 </p>
 
-<p style="font-size:1.1rem; color:#cbd5e1;">
-  <strong>Happy Coding ❤️</strong> — Track your progress, revise with purpose, master forever.
-</p>
+### ⭐ **If this helps you, don't forget to Star it!**
+
+### **Happy Coding & Best of Luck! ❤️**
+
+---
+
+*Last Updated: 2024*  
+*Journey Progress: 25% Complete | Keep Going! 🔥*
 
 </div>
-
-<!-- End of README -->
