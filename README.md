@@ -1,114 +1,215 @@
 # 🚀 Master DSA Sheet 500
 
-> **One sheet. 500 carefully selected problems. Three passes. Strong DSA.**
+<div align="center">
 
-Welcome to the **Master DSA Sheet 500**! 🎯
+# 🧠 Master Your DSA Journey
 
-This repository is designed to help you master **Data Structures & Algorithms** through **consistent practice and structured revisions**. Solving problems once is not enough—real mastery comes from revisiting them until the patterns become second nature.
+### **500 Problems • 3 Revisions • Infinite Confidence**
 
-## 🎯 The 3-Pass Learning System
+<p>
+  <img src="https://img.shields.io/badge/Problems-500-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-In%20Progress-success?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Goal-Consistency-orange?style=for-the-badge">
+</p>
 
-Every problem follows this simple workflow:
+> **"Don't count the number of problems you solve. Count the concepts you master."** 🚀
 
-| Stage         | Goal                                                       | Status |
-| ------------- | ---------------------------------------------------------- | ------ |
-| ✅ First Solve | Understand and solve the problem yourself.                 | ⬜      |
-| 🔁 Rev-1      | Revisit after a few days to strengthen understanding.      | ⬜      |
-| 🔄 Rev-2      | Solve again without help to move it into long-term memory. | ⬜      |
-
-> **First Solve → Rev-1 → Rev-2 = Long-Term Memory 🧠**
+</div>
 
 ---
 
-# 📊 Progress Tracker
+# 🎯 Mission
 
-Track every problem using the sheet below.
+Welcome to **Master DSA Sheet 500**.
 
-| #   | Problem Name | Difficulty | Topic | First Solve ✅ | Rev-1 🔁 | Rev-2 🔄 | Notes |
-| --- | ------------ | ---------- | ----- | ------------- | -------- | -------- | ----- |
-| 1   |              |            |       | ⬜             | ⬜        | ⬜        |       |
-| 2   |              |            |       | ⬜             | ⬜        | ⬜        |       |
-| 3   |              |            |       | ⬜             | ⬜        | ⬜        |       |
-| ... | ...          | ...        | ...   | ...           | ...      | ...      |       |
-| 500 |              |            |       | ⬜             | ⬜        | ⬜        |       |
+This repository isn't just another DSA sheet.
 
----
+It's a **battle plan** to become interview-ready through **smart practice** and **multiple revisions**.
 
-# 📚 Topics Covered
-
-* Arrays
-* Strings
-* Hashing
-* Recursion
-* Backtracking
-* Linked List
-* Stack
-* Queue
-* Binary Search
-* Trees
-* Binary Search Trees
-* Heaps
-* Tries
-* Graphs
-* Dynamic Programming
-* Greedy
-* Bit Manipulation
-* Sliding Window
-* Two Pointers
-* Prefix Sum
-* Segment Tree
-* Disjoint Set Union (DSU)
-* Mathematical Algorithms
-* And more...
-
----
-
-# 🏆 Challenge Yourself
-
-* 🎯 Solve at least **2–5 problems every day**
-* 🔁 Never skip the revision passes
-* 📝 Write down mistakes and key observations
-* 📈 Focus on consistency over speed
-* 🚀 Watch your problem-solving skills improve week after week
-
----
-
-# 📅 Suggested Schedule
-
-| Day           | Task                        |
-| ------------- | --------------------------- |
-| Monday–Friday | Solve 2–5 new problems      |
-| Saturday      | Rev-1 of completed problems |
-| Sunday        | Rev-2 + Weekly Review       |
-
----
-
-# 📈 Your Progress
+Every problem follows the **3-Step Mastery System**.
 
 ```
-Problems Solved   : 0 / 500
-Revision-1 Done   : 0 / 500
-Revision-2 Done   : 0 / 500
-
-Completion        : 0%
+📖 Learn
+     ↓
+💻 Solve
+     ↓
+🔁 Revise
+     ↓
+🧠 Master
 ```
 
 ---
 
-# 💡 Success Formula
+# ⚔️ The 3-Step Mastery System
+
+| Stage | Objective | Status |
+|:------:|-----------|:------:|
+| ✅ First Solve | Understand the logic | ⬜ |
+| 🔁 Revision 1 | Build confidence | ⬜ |
+| 🔄 Revision 2 | Lock into long-term memory | ⬜ |
+
+> **Solve Once → Understand**  
+> **Solve Twice → Remember**  
+> **Solve Thrice → Master**
+
+---
+
+# 📈 Progress Dashboard
 
 ```
-Solve ➜ Understand ➜ Revise ➜ Repeat ➜ Master
+Overall Progress
+
+████████████████████ 0%
+
+Problems Solved    : 0 / 500
+Revision 1         : 0 / 500
+Revision 2         : 0 / 500
+
+Current Streak 🔥 : 0 Days
 ```
 
 ---
 
-# ⭐ Goal
+# 🏆 DSA Progress Sheet
 
-Don't aim to **finish 500 problems**.
+| No. | Problem | Topic | Difficulty | Solve | Rev-1 | Rev-2 | Notes |
+|----:|----------|-------|-----------|:-----:|:-----:|:-----:|------|
+| 1 | | | | ⬜ | ⬜ | ⬜ | |
+| 2 | | | | ⬜ | ⬜ | ⬜ | |
+| 3 | | | | ⬜ | ⬜ | ⬜ | |
+| 4 | | | | ⬜ | ⬜ | ⬜ | |
+| ... | | | | | | | |
+| 500 | | | | ⬜ | ⬜ | ⬜ | |
 
-Aim to **master 500 problems**.
+---
 
-When you complete all three passes, you won't just remember solutions—you'll recognize patterns, think faster, and solve unseen problems with confidence.
+# 🧩 Topics Covered
 
-**Happy Coding! 🚀**
+```
+📦 Arrays
+🔤 Strings
+🔗 Linked List
+📚 Stack
+🚶 Queue
+🌲 Trees
+🌳 BST
+🧠 Binary Search
+⚡ Recursion
+🎯 Backtracking
+💎 Heap
+🌐 Graph
+🟣 Trie
+📈 Dynamic Programming
+💰 Greedy
+🪟 Sliding Window
+👆 Two Pointer
+➕ Prefix Sum
+🌉 Segment Tree
+🤝 DSU
+🔢 Bit Manipulation
+🧮 Math
+```
+
+---
+
+# 🎖️ Milestones
+
+```
+🎯 25 Problems     🟢 Beginner
+🎯 50 Problems     🔵 Explorer
+🎯 100 Problems    🟣 Challenger
+🎯 200 Problems    🟠 Warrior
+🎯 300 Problems    🔴 Elite
+🎯 400 Problems    ⭐ Master
+🎯 500 Problems    👑 DSA Legend
+```
+
+---
+
+# 🔥 Daily Challenge
+
+```
+Today's Goal
+
+☐ Solve 3 Problems
+☐ Revise 5 Old Problems
+☐ Read Editorial Only If Needed
+☐ Update Progress
+☑ Never Give Up 💪
+```
+
+---
+
+# 📅 Weekly Plan
+
+| Day | Goal |
+|------|------|
+| Monday | New Problems |
+| Tuesday | New Problems |
+| Wednesday | New Problems |
+| Thursday | New Problems |
+| Friday | New Problems |
+| Saturday | Revision-1 |
+| Sunday | Revision-2 + Mock Contest |
+
+---
+
+# 💡 Rules
+
+- ✅ Never copy solutions immediately.
+- ✅ Spend at least 30 minutes thinking.
+- ✅ Write clean code.
+- ✅ Revise every solved problem.
+- ✅ Learn the pattern, not the answer.
+- ✅ Stay consistent.
+
+---
+
+# 🏅 Achievement Board
+
+```
+⬜ First Problem
+⬜ 7-Day Streak
+⬜ 25 Problems
+⬜ 50 Problems
+⬜ First Revision Completed
+⬜ 100 Problems
+⬜ 200 Problems
+⬜ DP Master
+⬜ Graph Expert
+⬜ 500 Problems
+👑 DSA Legend
+```
+
+---
+
+# 📊 Motivation Meter
+
+```
+Feeling Lost?
+
+Remember...
+
+Day 1      █░░░░░░░░░
+Day 30     ███░░░░░░░
+Day 90     ██████░░░░
+Day 180    █████████░
+Day 365    ██████████
+
+Small progress every day
+becomes massive success.
+```
+
+---
+
+<div align="center">
+
+# 🚀 One Problem at a Time.
+
+## Every solved problem makes you a better programmer.
+
+### ⭐ If this repository helps you, don't forget to Star it!
+
+**Happy Coding ❤️**
+
+</div>
