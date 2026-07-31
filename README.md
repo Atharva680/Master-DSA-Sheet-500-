@@ -1,597 +1,183 @@
-# 🚀 Master DSA Sheet 500
+<div align="center"><!-- Animated header --><picture> <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Inter&weight=800&size=34&pause=800&color=7C5CFF&center=true&vCenter=true&multiline=true&width=900&height=110&lines=THE+COMPLETE+10%2F10+PREP+TRACKER;One+page.+507+problems.+Zero+juggling."> <img alt="10/10 Prep Tracker" src="https://readme-typing-svg.demolab.com?font=Inter&weight=800&size=34&pause=800&color=7C5CFF&center=true&vCenter=true&multiline=true&width=900&height=110&lines=THE+COMPLETE+10%2F10+PREP+TRACKER;One+page.+507+problems.+Zero+juggling."> </picture>
+Priority Matrix · Master Checklist · 507-Problem DSA Tracker
+<br/>
+Built for Atharva Vijay Shinde · B.Tech CSE · SBJITMR Nagpur · 2026 batch
 
-<div align="center">
-
-# 🧠 Master Your DSA Journey
-
-### **500 Problems • 3 Revisions • Infinite Confidence**
-
-<p>
-  <img src="https://img.shields.io/badge/Problems-500-blue?style=for-the-badge&logo=leetcode">
-  <img src="https://img.shields.io/badge/Status-In%20Progress-success?style=for-the-badge&logo=github">
-  <img src="https://img.shields.io/badge/Goal-Consistency-orange?style=for-the-badge&logo=firebase">
-  <img src="https://img.shields.io/badge/Version-2.0-red?style=for-the-badge&logo=rocket">
-</p>
-
-> **"Don't count the number of problems you solve. Count the concepts you master."** 🚀
+<p align="center"> <img src="https://img.shields.io/badge/Problems-507-7C5CFF?style=for-the-badge&logo=leetcode&logoColor=white" /> <img src="https://img.shields.io/badge/Patterns-40%2B-22D3EE?style=for-the-badge" /> <img src="https://img.shields.io/badge/Sections-13-FF4FD8?style=for-the-badge" /> <img src="https://img.shields.io/badge/Tracks-4-4ADE80?style=for-the-badge" /> <img src="https://img.shields.io/badge/Revisions-3_pass-FBBF24?style=for-the-badge" /> </p><p align="center"> <a href="#-demo">Demo</a> · <a href="#-features">Features</a> · <a href="#-quick-start">Quick Start</a> · <a href="#-how-to-use">How To Use</a> · <a href="#-the-3-revision-rule">The 3-Revision Rule</a> · <a href="#-track-strategy">Track Strategy</a> · <a href="#-tech-stack">Tech Stack</a> · <a href="#-roadmap">Roadmap</a> </p><br/>
+[!IMPORTANT]
+This single tracker replaces three separate documents. Priority matrix, master checklist, and the full 507-question DSA tracker — all live, interactive, and auto-saved in your browser.
 
 </div>
-
----
-
-## 🎯 Mission Statement
-
-Welcome to **Master DSA Sheet 500** — an elite, battle-tested **DSA mastery program** designed to transform you from a curious learner into an **interview-ready problem-solver**.
-
-This isn't just another list of problems. It's a **structured journey** powered by:
-- ✨ **Smart Spaced Repetition**
-- 🎯 **Progressive Difficulty**
-- 📊 **Real-Time Analytics**
-- 🏆 **Gamified Milestones**
-
-```
-📖 Learn Concepts
-     ↓ (Day 1)
-💻 Solve Problems
-     ↓ (Day 7)
-🔁 Revision 1
-     ↓ (Day 21)
-🔄 Revision 2
-     ↓ (Day 60)
-🧠 Master Forever
-```
-
----
-
-## ⚔️ The 3-Step Mastery System
-
-<table>
-<tr>
-<td>
-
-### Stage 1: First Solve
-**Goal**: Understand Logic & Pattern
-
-- Read problem carefully
-- Think for 30+ minutes
-- Code your solution
-- Fix bugs independently
-
-**Time**: ~60 mins/problem
-
-</td>
-<td>
-
-### Stage 2: Revision 1
-**Goal**: Build Speed & Confidence
-
-- Solve without looking at notes
-- Optimize the approach
-- Improve code quality
-- Understand edge cases
-
-**Time**: ~30 mins/problem
-
-</td>
-<td>
-
-### Stage 3: Revision 2
-**Goal**: Lock Into Memory
-
-- Solve from scratch rapidly
-- Teach someone else
-- Write cleaner code
-- Master the pattern
-
-**Time**: ~15 mins/problem
-
-</td>
-</tr>
-</table>
-
-> **Solve Once** → You understand  
-> **Solve Twice** → You remember  
-> **Solve Thrice** → You master  
-
----
-
-## 📈 Interactive Progress Dashboard
-
-<div align="center">
-
-### 🔥 Overall Progress
-
-```
-████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 25%
-```
-
-| Metric | Count | Target | Status |
-|:------:|:-----:|:------:|:------:|
-| **Problems Solved** | 125 | 500 | 25% ✅ |
-| **Revision 1** | 85 | 500 | 17% 🔄 |
-| **Revision 2** | 42 | 500 | 8% 📚 |
-| **Current Streak** 🔥 | **12 Days** | ∞ | 🚀 |
-| **Avg Time/Problem** | 45 mins | 30 mins | ⏱️ |
-
-### ⏰ Time Invested
-```
-Total Hours: 94 hrs 30 mins | Estimated Total: 375 hrs
-Week Pace:  13.5 hrs/week   | On Track: YES ✅
-```
-
-</div>
-
----
-
-## 🏆 DSA Master Tracker
-
-### 📊 Topic-Wise Breakdown
-
-```
-ARRAYS & STRINGS
-████████░░ 80% (40/50) | ✅ Strong
-
-LINKED LISTS
-██████░░░░ 60% (15/25) | 🔄 In Progress
-
-STACK & QUEUE
-████░░░░░░ 40% (10/25) | 📚 Beginner
-
-TREES & GRAPHS
-██░░░░░░░░ 20% (5/25)  | 🚀 Just Started
-
-DYNAMIC PROGRAMMING
-████████░░ 80% (20/25) | ✅ Strong
-
-RECURSION & BACKTRACKING
-██████░░░░ 60% (12/20) | 🔄 In Progress
-
-HEAP & HASHING
-████░░░░░░ 40% (10/25) | 📚 Beginner
-
-BINARY SEARCH & TWO POINTERS
-███████░░░ 70% (21/30) | ✅ Strong
-
-GREEDY & BIT MANIPULATION
-██░░░░░░░░ 20% (5/25)  | 🚀 Just Started
-
-ADVANCED (Trie, Segment Tree, DSU)
-█░░░░░░░░░ 10% (3/30)  | 🚀 Expert Zone
-```
-
----
-
-## 📋 Sample Problem Tracker
-
-| # | Problem | Topic | Difficulty | Solve | Rev-1 | Rev-2 | Best Time | Notes |
-|:--:|---------|-------|:----------:|:-----:|:-----:|:-----:|:---------:|-------|
-| 1 | Two Sum | Arrays | 🟢 Easy | ✅ | ✅ | ✅ | 12m | Classic hashing |
-| 2 | Reverse String | Strings | 🟢 Easy | ✅ | ✅ | ✅ | 8m | Two pointers |
-| 3 | LongestSubstring | Strings | 🟡 Medium | ✅ | ✅ | ⏳ | 35m | Sliding window |
-| 4 | Median SortedArrays | Arrays | 🔴 Hard | ✅ | ⏳ | ⬜ | 52m | Binary search |
-| 5 | LRU Cache | Design | 🔴 Hard | ⏳ | ⬜ | ⬜ | — | Study needed |
-| ... | ... | ... | ... | ... | ... | ... | ... | ... |
-| 500 | TBD | Advanced | 🔴 Hard | ⬜ | ⬜ | ⬜ | — | Future |
-
-**Legend**: ✅ Completed | ⏳ In Progress | ⬜ Todo | 🟢 Easy | 🟡 Medium | 🔴 Hard
-
----
-
-## 🧩 Topics & Sub-Topics
-
-<details open>
-<summary><b>📦 Arrays & Strings (50 problems)</b></summary>
-
-- Two Sum Variants
-- Maximum Subarray
-- Rotate Array
-- Best Time to Buy Stock
-- Container With Most Water
-- Trapping Rain Water
-- Longest Substring Without Repeating
-- String Compression
-- And 42 more...
-
-</details>
-
-<details>
-<summary><b>🔗 Linked Lists (25 problems)</b></summary>
-
-- Reverse Linked List
-- Merge Two Sorted Lists
-- Cycle Detection
-- Flatten Multilevel List
-- Reorder List
-- And 20 more...
-
-</details>
-
-<details>
-<summary><b>📚 Stack & Queue (25 problems)</b></summary>
-
-- Valid Parentheses
-- Min Stack
-- Daily Temperatures
-- Sliding Window Maximum
-- Top K Frequent Elements
-- And 20 more...
-
-</details>
-
-<details>
-<summary><b>🌲 Trees & Graphs (50 problems)</b></summary>
-
-- Inorder/Preorder/Postorder Traversal
-- Level Order Traversal
-- Binary Tree Maximum Path Sum
-- Lowest Common Ancestor
-- Word Ladder
-- Course Schedule
-- Network Delay Time
-- Reconstruct Itinerary
-- And 42 more...
-
-</details>
-
-<details>
-<summary><b>📈 Dynamic Programming (50 problems)</b></summary>
-
-- Climbing Stairs
-- Coin Change
-- Longest Increasing Subsequence
-- Edit Distance
-- Regex Matcher
-- Burst Balloons
-- Palindrome Partitioning
-- And 43 more...
-
-</details>
-
-<details>
-<summary><b>⚡ Recursion & Backtracking (20 problems)</b></summary>
-
-- Permutations
-- Combinations
-- N-Queens
-- Word Search
-- Sudoku Solver
-- And 15 more...
-
-</details>
-
-<details>
-<summary><b>💎 Heap & Hashing (25 problems)</b></summary>
-
-- Kth Largest Element
-- Sort Characters by Frequency
-- Intersection of Arrays
-- Group Anagrams
-- And 21 more...
-
-</details>
-
-<details>
-<summary><b>🔍 Binary Search & Two Pointers (30 problems)</b></summary>
-
-- Search in Rotated Array
-- Find Peak Element
-- 3Sum
-- Container With Most Water
-- Backspace String Compare
-- And 25 more...
-
-</details>
-
-<details>
-<summary><b>💰 Greedy & Bit Manipulation (25 problems)</b></summary>
-
-- Jump Game
-- Gas Station
-- Single Number
-- Majority Element
-- Maximum Product Subarray
-- And 20 more...
-
-</details>
-
-<details>
-<summary><b>🚀 Advanced Topics (80 problems)</b></summary>
-
-**Trie** (10) | **Segment Tree** (10) | **Disjoint Set Union** (10) | **Topological Sort** (10) | **Math** (20) | **Design** (20)
-
-</details>
-
----
-
-## 🎖️ Achievement Levels & Milestones
-
-```
-🟢 Beginner          (0-50 problems)     │ "Learning the Basics"
-🔵 Explorer          (51-100 problems)   │ "Gaining Momentum"
-🟣 Challenger        (101-150 problems)  │ "Building Speed"
-🟠 Warrior           (151-250 problems)  │ "Fighting Hard"
-🔴 Elite             (251-350 problems)  │ "Interview Ready"
-⭐ Master            (351-450 problems)  │ "Confident Coder"
-👑 DSA Legend        (451-500 problems)  │ "Unstoppable"
-```
-
-### 🏅 Special Achievements Unlocked
-- ✅ **First Blood** — Solved your 1st problem
-- ✅ **Week Warrior** — 7-day solving streak
-- ✅ **Century Club** — 100 problems solved
-- ✅ **Revision Expert** — Completed Revision 1
-- ✅ **Memory Master** — Completed Revision 2
-- ⬜ **Category Expert** — All problems in 1 category
-- ⬜ **Speed Demon** — Avg solve time < 20 mins
-- ⬜ **Month Marathon** — 30-day streak
-
----
-
-## 📅 Optimized Weekly Schedule
-
-| Day | Focus | Goal | Time |
-|-----|-------|------|------|
-| **Monday** 🟢 | New Problems | Solve 3 fresh problems | 2.5 hrs |
-| **Tuesday** 🟡 | New Problems | Solve 3 fresh problems | 2.5 hrs |
-| **Wednesday** 🔵 | New + Revision | Solve 2 new + Revise 3 old | 2.5 hrs |
-| **Thursday** 🟠 | New Problems | Solve 3 fresh problems | 2.5 hrs |
-| **Friday** 🔴 | New Problems | Solve 3 fresh problems | 2.5 hrs |
-| **Saturday** ⭐ | Revision-1 | Revise 10 problems from 2 weeks ago | 3 hrs |
-| **Sunday** 👑 | Revision-2 + Mock | Revise 5 old + Mock contest | 3 hrs |
-
-**Total Weekly Commitment**: ~18.5 hours
-
----
-
-## 💡 The DSA Code of Honor
-
-```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✅ THOU SHALT...
-
-  1. Spend 30+ minutes thinking before coding
-  2. Code clean, readable solutions
-  3. Never copy-paste solutions
-  4. Revise every single problem
-  5. Learn the PATTERN, not just the answer
-  6. Write down time & space complexity
-  7. Test edge cases thoroughly
-  8. Maintain a learning journal
-  9. Stay consistent, even on bad days
-  10. Share knowledge with others
-
-❌ THOU SHALT NOT...
-
-  1. Rush to the solution
-  2. Skip revisions
-  3. Solve problems mechanically
-  4. Ignore time/space analysis
-  5. Forget edge cases
-  6. Give up after failures
-  7. Compare your progress with others
-  8. Practice without understanding
-  9. Neglect fundamentals for advanced topics
-  10. Lose hope 💪
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-```
-
----
-
-## 🔥 Daily Challenge Checklist
-
-```
-TODAY'S MISSION (Date: __)
-
-Phase 1: NEW PROBLEMS
-  ☐ Problem 1: _________________ (Topic: ______)
-  ☐ Problem 2: _________________ (Topic: ______)
-  ☐ Problem 3: _________________ (Topic: ______)
-  
-Phase 2: REVISIONS
-  ☐ Revise 3 problems from last week
-  ☐ Revise 2 problems from 2 weeks ago
-  
-Phase 3: ANALYSIS
-  ☐ Document time taken
-  ☐ Note down key insights
-  ☐ Identify weak patterns
-  
-Phase 4: REFLECTION
-  ☐ Update tracker
-  ☐ Journal today's learnings
-  ☐ Plan tomorrow's focus
-
-MOTIVATION CHECK
-  Your effort today shapes your future interviews. 💪
-  Progress > Perfection. Keep going! 🚀
-```
-
----
-
-## 📊 Progress Visualization
-
-### Motivation Curve 📈
-
-```
-                                         👑 DSA Legend
-                                        /
-                         🌟 Master ___/
-                        /
-        Elite _________/
-       /
-    Warrior
-   /
-  /___Challenger
-      \
-       Explorer
-        \
-         Beginner
-
-Day 1    Day 30   Day 90   Day 180  Day 365
-█░░░░░  ███░░░░  ██████░  █████████  ██████████
-```
-
-### Effort vs Reward 🎯
-
-```
-EARLY PHASE (Days 1-30)
-Effort: High ████████
-Results: Slow ██
-Frustration: Real 😤
-Strategy: PUSH THROUGH
-
-MID PHASE (Days 31-90)
-Effort: Consistent ██████
-Results: Accelerating ████
-Confidence: Growing ✨
-Strategy: MAINTAIN MOMENTUM
-
-LATE PHASE (Days 91-180)
-Effort: Optimized ████
-Results: Explosive ████████
-Confidence: HIGH ⭐⭐⭐
-Strategy: ENJOY THE RIDE
-
-MASTERY PHASE (Days 181+)
-Effort: Efficient ██
-Results: Automatic ██████████
-Confidence: PEAK 🚀
-Strategy: GIVE BACK
-```
-
----
-
-## 📚 Learning Resources
-
-### Problem Platforms
-- 🔗 [LeetCode](https://leetcode.com) — Premium quality
-- 🔗 [CodeSignal](https://codesignal.com) — Great explanations
-- 🔗 [HackerRank](https://hackerrank.com) — Good basics
-- 🔗 [GeeksforGeeks](https://geeksforgeeks.org) — Detailed articles
-
-### Study Materials
-- 📖 Competitive Programming by Halim & Halim
-- 📖 Cracking the Coding Interview
-- 📖 Elements of Programming Interviews
-- 🎥 Abdul Bari (YouTube) — Algorithm Masterclass
-- 🎥 FreeCodeCamp — In-depth tutorials
-
-### Practice Strategy
-- **Week 1-4**: Focus on fundamentals
-- **Week 5-12**: Medium difficulty problems
-- **Week 13-24**: Hard problems + patterns
-- **Week 25+**: Mixed contests + weak area drilling
-
----
-
-## 🎮 Gamification System
-
-### XP & Level System
-```
-Every problem solved = XP earned
-XP accumulates toward next level
-
-Level 1:    0 XP      🟢 Newbie
-Level 5:   500 XP     🔵 Learner
-Level 10: 1000 XP     🟣 Coder
-Level 15: 2000 XP     🟠 Expert
-Level 20: 3000 XP     🔴 Master
-Level 25: 5000 XP     ⭐ Legend
-```
-
-### Badge Collection
-- 🎖️ First Problem
-- 🎖️ Week Warrior (7-day streak)
-- 🎖️ Century Champion (100 problems)
-- 🎖️ Revision Guru
-- 🎖️ Category Expert
-- 🎖️ Speed Demon (sub-20min average)
-- 🎖️ Consistency King (30-day streak)
-- 🎖️ DSA Master (500 problems)
-
----
-
-## 💬 Testimonials & Success Stories
-
-> "Followed this sheet for 180 days and cracked Google, Microsoft, and Amazon." — *Anonymous*
-
-> "The 3-revision system changed my approach to learning. No more forgotten solutions!" — *Senior SWE*
-
-> "Best structured DSA guide I've found. Finally feeling interview-ready!" — *Job Seeker*
-
----
-
-## 🚀 Quick Start Guide
-
-### Step 1: Clone & Setup
-```bash
-git clone https://github.com/yourusername/Master-DSA-500.git
-cd Master-DSA-500
-```
-
-### Step 2: Choose Your Starting Point
-```
-Beginner?   → Start with Arrays & Strings
-Intermediate? → Start with Trees & Graphs
-Advanced?   → Jump to Dynamic Programming
-```
-
-### Step 3: Track Your Progress
-- Update the main tracker daily
-- Keep a journal of learnings
-- Review weekly statistics
-
-### Step 4: Join the Community
-- Star this repository ⭐
-- Share your progress
-- Help others learn
-
----
-
-## 📞 Let's Connect
-
-<div align="center">
-
-| Platform | Link |
-|----------|------|
-| 💻 **GitHub** | [Profile](https://github.com) |
-| 🐦 **Twitter** | [@YourHandle](https://twitter.com) |
-| 💼 **LinkedIn** | [Your Profile](https://linkedin.com) |
-| 📧 **Email** | contact@example.com |
-
-</div>
-
----
-
-## 📄 License & Attribution
-
-This project is licensed under the **MIT License** — feel free to fork, modify, and share!
-
----
-
-<div align="center">
-
-# 🌟 Remember: Every Expert Was Once a Beginner
-
-### Your consistent effort today becomes your competitive advantage tomorrow.
-
-## **Let's Master DSA Together!** 🚀
-
-<p>
-  <img src="https://img.shields.io/github/stars/yourusername/Master-DSA-500?style=social">
-  <img src="https://img.shields.io/github/forks/yourusername/Master-DSA-500?style=social">
-  <img src="https://img.shields.io/github/contributors/yourusername/Master-DSA-500?style=social">
-</p>
-
-### ⭐ **If this helps you, don't forget to Star it!**
-
-### **Happy Coding & Best of Luck! ❤️**
-
----
-
-*Last Updated: 2024*  
-*Journey Progress: 25% Complete | Keep Going! 🔥*
+✨ Why this exists
+Most prep trackers are either dead PDFs or over-engineered apps that slow you down. 10/10 Prep Tracker is different:
+
+🎯 Tells you what to study today based on the track you're targeting (Service MNC / Big Tech / Startup / Consulting).
+🧠 Implements the 3-revision rule (Done → Rev-1 at 1 week → Rev-2 at 4 weeks) that moves problems into long-term memory.
+💾 Auto-saves every tick to your browser — no accounts, no sync drama.
+🔥 Streak counter that only increments when you make actual progress (not just opens).
+🎨 A modern glassmorphism UI that actually makes you want to grind.
+🚀 Demo
+Just open 
+index.html
+ in any modern browser. That's it. No build step, no npm install, no server required.
+
+text
+
+prep-tracker/
+├── index.html            # The entire app shell
+├── assets/
+│   ├── style.css         # Glassmorphism + gradient theme
+│   └── app.js            # All interactivity, zero dependencies
+├── data/
+│   ├── problems.json     # 507 problems, 13 sections, 40+ patterns
+│   ├── matrix.json       # 4-track priority matrix (HIGH/MED/LOW)
+│   └── checklist.json    # 8-section master prep checklist
+└── README.md             # You are here
+<div align="center"> <table> <tr> <td align="center"><b>📊 Dashboard</b><br/><sub>Live stats, today's set, streak, track advisor</sub></td> <td align="center"><b>🎯 Priority Matrix</b><br/><sub>Click any column to focus a track</sub></td> </tr> <tr> <td align="center"><b>✅ Checklist</b><br/><sub>Tick off aptitude → HR → mocks</sub></td> <td align="center"><b>💻 DSA Tracker</b><br/><sub>Search, filter, mark Done/Rev-1/Rev-2</sub></td> </tr> </table> </div>
+🔥 Features
+Feature	Why it matters
+⚡	Zero-setup PWA-ready SPA	Open the file and go. Works offline after first load.
+🎨	Modern glassmorphism UI	Animated gradient background, custom cursor, micro-interactions, rise-in animations.
+🌗	Dark / Light theme	One-click toggle, persists across sessions.
+🔍	Instant fuzzy search	Hit / to jump to the search box. Type a Q number, pattern, or keyword.
+🏷️	Filter by difficulty & state	Easy / Medium / Hard × All / To-do / Done / Rev-1 due / Rev-2 due.
+🧭	13 section tabs with live progress	See exactly how many you've solved per section.
+📅	"Today's suggested set"	Mixes fresh problems with revision-due items so you never forget old patterns.
+🧭	Track advisor	Pick a track and get a personalized focus list for the week + a "deprioritize" list.
+💪	Daily streak	Only increments on real progress (solving a problem or checking off a checklist item).
+📈	21-day activity timeline	Visual history of your grind at the bottom of the dashboard.
+💡	Rotating motivation quotes	Contextual tips from the priority matrix, not generic fluff.
+⌨️	Keyboard shortcuts	<kbd>/</kbd> search, <kbd>1</kbd>-<kbd>4</kbd> switch views.
+🔄	Smart cascade on checkboxes	Can't mark Rev-1 until Done; can't mark Rev-2 until Rev-1. Un-checking Done clears revisions.
+💾	localStorage persistence	Your data stays on your device. Export/import coming next.
+🔔	Toast feedback	Every action gives a satisfying confirmation.
+⚡ Quick Start
+Bash
+
+# 1. Clone or download this folder
+# 2. Serve it (optional — opening index.html directly works too)
+cd prep-tracker
+python3 -m http.server 8000
+
+# 3. Open http://localhost:8000
+That's literally it. No npm install. No .env files. No backend.
+
+📖 How to use it
+1. Pick your track on the Dashboard
+Tap one of the four cards:
+
+🏢 Service MNC (TCS / Infosys / Wipro / Accenture / Cognizant / Capgemini)
+🚀 Big Tech / Product (Google / Amazon / Microsoft / Meta + GlobalLogic/Mphasis-tier)
+⚡ Startup (Seed → Series B, worldwide)
+🎯 Consulting / Finance (PwC / HSBC / Citi / JPMorgan)
+The advisor tells you exactly what to focus on this week and what to deprioritize.
+
+2. Knock out "Today's suggested set"
+The dashboard picks 6 items for you — a mix of fresh unsolved problems and items due for revision. Click any card to jump straight to it in the DSA tracker.
+
+3. Mark problems Done → Rev-1 → Rev-2
+Three columns per problem:
+
+✅ Done — first solve (counts toward streak)
+🔁 Rev-1 — revise ~1 week after solving
+🏆 Rev-2 — revise ~3–4 weeks after Rev-1 (or right before interviews)
+The "Rev-1 due" and "Rev-2 due" filters automatically surface problems that are due based on when you solved them.
+
+4. Tick off the checklist
+Switch to the Checklist tab (press <kbd>3</kbd>) and work through:
+
+🧮 Aptitude & Reasoning
+💻 Technical Fundamentals (OOP / DBMS / OS / CN / SQL)
+🏗️ System Design / LLD
+⚙️ Stack-Specific Depth (RAG, Spark, Azure, Terraform, LangChain)
+🛠️ Practical / Take-Home Readiness
+📊 Case Study / Consulting
+🎯 Behavioral / HR (STAR stories, Amazon LPs, elevator pitch)
+🏁 Mock Interviews & Final Prep
+5. Check the matrix when unsure
+The Priority Matrix tab shows every topic rated HIGH / MED / LOW per track. Click a column header to focus one track.
+
+Reading the matrix: for Service MNCs, DSA-Hard and System Design are LOW — don't burn hours there; put that time into Aptitude, Reasoning, and HR instead. For Startups, DSA-Hard barely matters but your actual stack depth (Python/LangChain/Spark/Azure) and take-home speed are HIGH.
+
+🧠 The 3-Revision Rule
+Solving a problem once does not put it in long-term memory. The tracker bakes in the system that actually works:
+
+text
+
+Day 0   → Solve it (Done)      ← counts for the day
+Day 7   → Rev-1 (1 week later) ← still fresh, re-solve fast
+Day 35  → Rev-2 (~1 month)     ← this is when it sticks forever
+The app automatically shows you which problems are due for Rev-1 / Rev-2 based on timestamps saved when you tick the box.
+
+🗺️ Track Strategy Cheat Sheet
+<div align="center"> <table> <tr><th>Track</th><th>🔥 HIGH priority</th><th>⏭ Skip / deprioritize</th></tr> <tr> <td>🏢 <b>Service MNC</b></td> <td>Aptitude · Reasoning · Verbal · STAR stories</td> <td>Hard DSA · System Design</td> </tr> <tr> <td>🚀 <b>Big Tech / Product</b></td> <td>Hard DSA · LLD · Resume deep-dive · Leadership Principles · Communication</td> <td>Aptitude · Reasoning · Verbal</td> </tr> <tr> <td>⚡ <b>Startup</b></td> <td>Stack depth · Take-home · DBMS/SQL · Cloud/DevOps · Resume · Communication</td> <td>Hard DSA · OS/CN theory</td> </tr> <tr> <td>💼 <b>Consulting / Finance</b></td> <td>Case studies · Behavioral · Communication · Company research</td> <td>DSA · OOP · OS · CN</td> </tr> </table> </div>
+🛠️ Tech Stack
+HTML5 — semantic, accessible markup
+Vanilla CSS3 — custom properties, glassmorphism (backdrop-filter), CSS grid, animations
+Vanilla JavaScript (ES2020+) — zero runtime dependencies, zero build step
+JSON data files — easy to edit, easy to extend
+localStorage — persistence without a backend
+Google Fonts — Inter (UI) + JetBrains Mono (data/numbers)
+No React. No Tailwind. No jQuery. Just fast, clean code that loads in milliseconds.
+
+📂 Data format (easy to customize)
+
+problems.json
+JSON
+
+{
+  "num": 1,
+  "pattern": "Two Pointers",
+  "title": "Two Sum (sorted array)",
+  "diff": "Easy",
+  "section_num": 1,
+  "section": "Arrays"
+}
+
+matrix.json
+JSON
+
+{
+  "topic": "DBMS / SQL",
+  "values": ["MED", "MED", "HIGH", "MED"]
+}
+Values align with columns: Service MNC, Big Tech, Startup, Consult/Fin.
+
+
+checklist.json
+JSON
+
+{ "id":"tech", "title":"Technical Fundamentals", "icon":"💻", "items":[...] }
+Want to add more problems? Append to problems.json — everything else updates automatically.
+
+⌨️ Keyboard shortcuts
+Key	Action
+<kbd>/</kbd>	Focus the search box
+<kbd>1</kbd>	Dashboard
+<kbd>2</kbd>	Priority Matrix
+<kbd>3</kbd>	Checklist
+<kbd>4</kbd>	DSA Tracker
+🌱 Roadmap
+ Export / Import progress as JSON (backup & device-sync)
+ Dark-mode print stylesheet to print a physical tracker
+ LeetCode / GeeksforGeeks deep links per problem
+ Notes field per problem (tricks, edge cases you forgot)
+ Pomodoro timer integration inside the dashboard
+ Weekly report email (optional, via mailto: summary)
+ Spaced-repetition algorithm (SM-2) replacing fixed 7/35-day windows
+ Contest tracker (LeetCode Weekly / Codeforces rounds)
+💡 Pro tips
+Don't break the streak. Even one problem or one checklist item counts.
+Close the flagged gaps from your master sheet: Azure DevOps and Terraform are called out as weak spots — handle them before the first startup interview.
+Use Rev-2 as your interview bar. If you can solve a problem cold on Rev-2, it's interview-ready.
+Customize "Why this company" per target — the HR checklist reminds you not to use a generic answer.
+Rehearse every resume bullet in 20 seconds. The mock-interview checklist enforces this.
+📜 License
+Personal use built for Atharva Vijay Shinde's 2026 placement prep. Fork it, adapt it, ship your own offer. 🚀
+
+<div align="center"> <br/>
+Made with 🔥 in Nagpur.
+<br/>
+<sub>Solve · Revise · Master · Get the offer.</sub>
 
 </div>
