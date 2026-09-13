@@ -181,3 +181,11 @@ Made with 🔥 in Nagpur.
 <sub>Solve · Revise · Master · Get the offer.</sub>
 
 </div>
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Database
+|  |
+| ------- |
+| [1757-recyclable-and-low-fat-products](https://github.com/Atharva680/Master-DSA-Sheet-500-/tree/master/1757-recyclable-and-low-fat-products) |
+<!---LeetCode Topics End-->
