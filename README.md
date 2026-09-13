@@ -187,5 +187,6 @@ Made with 🔥 in Nagpur.
 ## Database
 |  |
 | ------- |
+| [0584-find-customer-referee](https://github.com/Atharva680/Master-DSA-Sheet-500-/tree/master/0584-find-customer-referee) |
 | [1757-recyclable-and-low-fat-products](https://github.com/Atharva680/Master-DSA-Sheet-500-/tree/master/1757-recyclable-and-low-fat-products) |
 <!---LeetCode Topics End-->
